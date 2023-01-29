@@ -1,6 +1,5 @@
 import useNotifier from "./os-notifier";
 import useMailer from "./send-email-report";
-require('dotenv').config()
 
 // @ts-check
 /** @implements {import('@playwright/test/reporter').Reporter} */
