@@ -12,7 +12,8 @@ You can schedule email sending with cron job like this :
 export PATH="/usr/bin:/bin:/home/$(whoami)/.nvm/versions/node/v18.12.1/bin" # define your node path here for cron job
 export XDG_RUNTIME_DIR=/run/user/$(id -u) # required to send OS notification from cron job
 rm -f "$PWD"/path/to/clone/dir/rugby-worldcup-tester/src/mail-content.txt && touch "$PWD"/path/to/clone/dir/rugby-worldcup-tester/src/mail-content.txt
-cd $PWD/path/to/clone/dir/rugby-worldcup-tester && npx playwright test && node $PWD/path/to/clone/dir/rugby-worldcup-tester/src/send-email-report.js
+cd $PWD/path/to/clone/dir/rugby-worldcup-tester && npx playwright test
+node src/send-email-report.js
 
 ```
 
