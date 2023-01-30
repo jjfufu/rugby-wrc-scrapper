@@ -41,12 +41,9 @@ const useMailer = (config = {contentFilename: 'mail-content.txt'}) => {
 
     async function send() {
         const length = await fileSize(filepath)
-        const mailOptions = await getMailOptions()
-        console.log(mailOptions)
         if(length > 0) {
             const transporter = getTransporter()
             const mailOptions = await getMailOptions()
-            console.log(mailOptions)
             await transporter.sendMail(mailOptions, (error, info) => {
                 if (error) {
                     logger.log(error)
