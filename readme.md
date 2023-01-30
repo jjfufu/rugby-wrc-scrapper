@@ -1,3 +1,8 @@
+## Run tests
+```bash
+npx playwright test
+```
+
 ## Cron job
 
 You can schedule email sending with cron job like this :
