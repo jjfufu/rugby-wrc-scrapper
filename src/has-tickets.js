@@ -6,7 +6,7 @@ import useMailer from "./send-email-report";
 class HasTickets {
     async onTestEnd(test, result) {
         if(result.status === 'passed') {
-            useNotifier().notify( `Des tickets sont disponibles pour le match ${test.title}`)
+            useNotifier().notify(`Des tickets sont disponibles pour le match ${test.title}`)
             await useMailer().appendMatch(test.title)
         }
     }
