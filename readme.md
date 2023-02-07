@@ -1,6 +1,6 @@
-## Run tests
+## Run
 ```bash
-npx playwright test
+node index.js
 ```
 
 ## Cron job
@@ -8,16 +8,14 @@ npx playwright test
 You can schedule email sending with cron job like this :
 
 ```bash
-#!/bin/bash (run.sh)
-export PATH="/usr/bin:/bin:/home/$(whoami)/.nvm/versions/node/v18.12.1/bin" # define your node path here for cron job
-export XDG_RUNTIME_DIR=/run/user/$(id -u) # required to send OS notification from cron job
-rm -f "$PWD"/path/to/clone/dir/rugby-worldcup-tester/src/mail-content.txt && touch "$PWD"/path/to/clone/dir/rugby-worldcup-tester/src/mail-content.txt
-cd $PWD/path/to/clone/dir/rugby-worldcup-tester && npx playwright test
-node src/send-email-report.js
+#!/bin/bash
+export PATH="/usr/bin:/bin:/home/$(whoami)/.nvm/versions/node/XX.XX.XX/bin" # define your node path here for cron job
+export XDG_RUNTIME_DIR=/run/user/$(id -u)
+cd $PWD/path/to/rugby-worldcup-tester && node index.js
 
 ```
 
-> Change /path/to/clone/dir/ by your clone directory
+> Change "/path/to" by your path to clone directory
 
 
 ### Enable cron with logs (every 5 mins)
